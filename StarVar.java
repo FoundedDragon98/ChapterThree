@@ -17,12 +17,17 @@ public class StarVar
         }
         System.out.println("");
         //Second drawing
-        int secondLength = 1;
+        int secondLengthA = 0;
+        int secondLengthB = length;
         for(int i = 0; i < length; i++) {
-            for(int n = 0; n < secondLength; n++) {
-                System.out.print("*");
+            for(int n = 0; n < secondLengthB; n++) {
+                System.out.print(" ");
             }
-            secondLength++;
+            for(int n = 0; n < secondLengthA; n++) {
+                   System.out.print("*");
+            }
+            secondLengthA++;
+            secondLengthB--;
             System.out.println("");
         }
         System.out.println("");
@@ -44,8 +49,35 @@ public class StarVar
         //Fourth drawing
         int fourthLengthA = length;
         int fourthLengthB = 1;
-        for(int i = 0; i < length; i++) {
-            
+        int spaces = 0;
+        if(length % 2 == 0) {
+            spaces = ((length/2) - 1);
+        }
+        else {
+            spaces = ((length - 1)/2);
+        }
+        int stars = 1;
+        for(int i = 0; i < (length/2.0); i++) {
+            printItem(" ", spaces);
+            printItem("*", stars);
+            printItem(" ", spaces);
+            spaces--;
+            stars += 2;
+            System.out.println("");
+        }
+        for(int i = 0; i < (length/2.0) + 1; i++) {
+            printItem(" ", spaces);
+            printItem("*", stars);
+            printItem(" ", spaces);
+            spaces++;
+            stars -= 2;
+            System.out.println("");
+        }
+    }
+    
+    public static void printItem(String st, int num) {
+        for(int j = 0; j < num; j++) {
+            System.out.print(st);
         }
     }
 }

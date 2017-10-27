@@ -2,4 +2,6 @@
 comment0.target=StarVar
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=st\ num
+comment2.target=void\ printItem(java.lang.String,\ int)
+numComments=3
